@@ -12,12 +12,17 @@ async function load() {
      return model;
 };
 
-function predict(model) {
+function predict_x(model) {
+    const userInput = document.getElementById('userInput').value;
+    const inputTensor = tf.tensor([parseInt(userInput)]);
+    
+function predict_y(model) {
     const userInput = document.getElementById('userInput').value;
     const inputTensor = tf.tensor([parseInt(userInput)]);
     
     model.then(model => {
-        let result = model.predict(inputTensor);
+        let result = model.predict_x(inputTensor);
+        let result = model.predict_y(inputTensor);
         result = result.round().dataSync()[0];
         alert(result ? "odd" : "even");
         
