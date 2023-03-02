@@ -13,8 +13,8 @@ async function load() {
 };
 
 function predict(model) {
-    //const userInput = document.getElementById('userInput').value;
-    const userInput = [document.getElementById('userInput_1').value, document.getElementById('userInput_2').value];
+    const userInput = document.getElementById('userInput').value;
+    //const userInput = [document.getElementById('userInput_1').value, document.getElementById('userInput_2').value];
     const inputTensor = tf.tensor([parseInt(userInput)]);
     
     model.then(model => {
