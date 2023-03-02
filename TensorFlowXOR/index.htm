@@ -19,8 +19,8 @@ function predict(model) {
     
     model.then(model => {
         let result = model.predict(userInput);
-        #result = result.round().dataSync()[0];
-        #alert(result ? "odd" : "even");
+        //result = result.round().dataSync()[0];
+        //alert(result ? "odd" : "even");
         alert(result)
     });
 };
@@ -37,7 +37,7 @@ const model = load();
      
 <input id="userInput_2" type="text">  </input>
 
-<button onclick="predict(model)">Predict</button>
+<button onclick="predict()">Predict</button>
 
 </body>
 
