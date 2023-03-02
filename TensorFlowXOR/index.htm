@@ -20,7 +20,7 @@ function predict(model) {
         let result = model.predict(inputTensor);
         let result = model.predict(inputTensor);
         result = result.round().dataSync()[0];
-        alert(result ? "odd" : "even" : "Yes" :"No");
+        alert(result ? "odd" : "even");
         
     });
 };
