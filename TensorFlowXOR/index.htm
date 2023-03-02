@@ -15,8 +15,13 @@ async function load() {
 function predict(model) {
     const userInput = document.getElementById('userInput').value;
     const inputTensor = tf.tensor([parseInt(userInput)]);
+     
+function predict(model) {
+    const userInput = document.getElementById('userInput').value;
+    const inputTensor = tf.tensor([parseInt(userInput)]);
     
     model.then(model => {
+        let result = model.predict(inputTensor);
         let result = model.predict(inputTensor);
         result = result.round().dataSync()[0];
         alert(result ? "odd" : "even" : "Yes" :"No");
