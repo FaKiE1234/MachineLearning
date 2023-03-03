@@ -13,9 +13,9 @@ async function load() {
 };
 
 function predict(model) {
-    const userInput_1 = document.getElementById('userInput_1').value;
-    const userInput_2 = document.getElementById('userInput_2').value;
-    const inputTensor = tf.tensor([[parseInt(userInput_1), parseInt(userInput_2)]]);
+    const userInput1 = document.getElementById('userInput1').value;
+    const userInput2 = document.getElementById('userInput2').value;
+    const inputTensor = tf.tensor([[parseInt(userInput1), parseInt(userInput2)]]);
     
     
     model.then(model => {
@@ -34,9 +34,9 @@ const model = load();
 <body>
 <h3>  ML XOR Problem  </h3>
 
-<input id="userInput_1" type="text">  </input>
+<input id="userInput1" type="text">  </input>
      
-<input id="userInput_2" type="text">  </input>
+<input id="userInput2" type="text">  </input>
 
 <button onclick="predict(model)">Predict</button>
 
