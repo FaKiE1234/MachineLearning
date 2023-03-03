@@ -17,12 +17,12 @@ function predict(model) {
     const userInput2 = document.getElementById('userInput2').value;
     const inputTensor = tf.tensor([[parseInt(userInput1), parseInt(userInput2)]]);
     
-    
     model.then(model => {
         let result = model.predict(inputTensor);
         result = result.round().dataSync()[0];
         //alert(result ? "odd" : "even");
         alert(result)
+        
     });
 };
 
@@ -32,7 +32,7 @@ const model = load();
 </head>
 
 <body>
-<h3>  ML XOR Problem  </h3>
+<h3>  ML example  </h3>
 
 <input id="userInput1" type="text">  </input>
      
