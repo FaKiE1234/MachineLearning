@@ -13,14 +13,14 @@ async function load() {
 };
 
 function predict(model) {
-    //const userInput = document.getElementById('userInput_1').value;
-    const userInput = [document.getElementById('userInput_1').value, document.getElementById('userInput_2').value];
+    const userInput_1 = document.getElementById('userInput_1').value;
+    const userInput_2 = document.getElementById('userInput_2').value;
     const inputTensor = tf.tensor([parseInt(userInput_1)], [parseInt(userInput_2)]);
     
     
     model.then(model => {
         let result = model.predict(userInput);
-        result = result.round().dataSync()[0];
+        //result = result.round().dataSync()[0];
         //alert(result ? "odd" : "even");
         alert(result)
     });
