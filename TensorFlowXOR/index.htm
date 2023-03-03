@@ -19,7 +19,7 @@ function predict(model) {
     
     
     model.then(model => {
-        let result = model.predict(userInput);
+        let result = model.predict(inputTensor);
         //result = result.round().dataSync()[0];
         //alert(result ? "odd" : "even");
         alert(result)
